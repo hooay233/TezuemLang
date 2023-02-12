@@ -20,7 +20,7 @@ although I didn't do formatted output
    This is still a line of comments
    They are all comments. /.
 ```
-Comments in Titanium Moment start with `//`; starts with `/.` and ends with `./` ending (nesting is not supported at this time)
+Comments in Tezlang start with `//`; starts with `/.` and ends with `./` ending (nesting is not supported at this time)
 
 # Operators
 ```
