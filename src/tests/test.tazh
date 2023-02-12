@@ -1,0 +1,4 @@
+[set hello to [codes [
+	[set name to [ask "What's your name? "]]
+	[put [+ "Hello, " [get name] "!"]]
+]]]

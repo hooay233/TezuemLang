@@ -1,0 +1,17 @@
+[fn main [
+	[set i to [arg 0]]
+	/.[put "sth"]./
+	[forever [
+		[chan i + 1]
+		[
+			if [> [$ i] [arg 1]] [
+				[break]
+			]
+		]
+		[put [$ i] "\n"]
+	]]
+]]
+
+[main [- 20] 50]
+
+// (\n?^\s+)|\n
