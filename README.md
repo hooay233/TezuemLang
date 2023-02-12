@@ -34,4 +34,4 @@ Comments in Titanium Moment start with `//`; starts with `/.` and ends with `./`
 
 
 Download:
-[tezlang.exe](./dist/tezlang.exe)
+> [tezlang.exe](./dist/tezlang.exe)
