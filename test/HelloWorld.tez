@@ -1,0 +1,6 @@
+[put "Hello World!"]
+// comment
+/. comments 1
+ . 2
+   3
+ ./
