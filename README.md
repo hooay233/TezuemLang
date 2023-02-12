@@ -3,6 +3,8 @@ A Functional Programming Lnaguage.
 
 [中文在这里 Chinese](./看我.md)
 
+> It has nothing to do with Apache Tez. I hadn't heard of Tez at all when I was developing it, and I didn't expect a rename. I'm too lazy to change it now. Let's just call it that and add a "-lang" to it. I made the name up randomly.
+
 Tezlang is a functional programming language written in *pure python*.  
 Its syntax is a little bit similar to `lisp` but with square brackets instead of round brackets
 
