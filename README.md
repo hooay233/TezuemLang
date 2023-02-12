@@ -1,7 +1,7 @@
 # Tez-Lang
 A Functional Programming Lnaguage.
 
-[中文在这里](./看我.md)
+[中文在这里 Chinese](./看我.md)
 
 Tezlang is a functional programming language written in *pure python*.  
 Its syntax is a little bit similar to `lisp` but with square brackets instead of round brackets
