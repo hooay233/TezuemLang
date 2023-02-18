@@ -1,3 +1,4 @@
+from sys import exit
 
 from codeRunner import *
 from classes.classes import *
@@ -127,7 +128,7 @@ def tezuIf(*args):
 
 funcs.update({
 	"exit": exit,
-	"quit": quit,
+	"quit": exit,
 	"+": tezuAdd,
 	"-": tezuSub,
 	"*": tezuMult,
