@@ -5,17 +5,17 @@ from classes.classes import *
 
 
 
-def tezCodes(*args):
+def tezuCodes(*args):
 	return Codeblock(list(args[0]))
 
-def tezAdd(*args):
+def tezuAdd(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
 		n += i
 	return n
 
-def tezSub(*args):
+def tezuSub(*args):
 	arg = evalCodes(args, cfn())
 	if len(arg)==1:
 		return -(arg[0])
@@ -24,21 +24,21 @@ def tezSub(*args):
 		n -= i
 	return n
 
-def tezMult(*args):
+def tezuMult(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
 		n *= i
 	return n
 
-def tezDivi(*args):
+def tezuDivi(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
 		n /= i
 	return n
 
-def tezEq(*args):
+def tezuEq(*args):
 	arg = evalCodes(args, cfn())
 	b = ""
 	for i in arg:
@@ -48,7 +48,7 @@ def tezEq(*args):
 	# print(b)
 	return eval(b)
 
-def tezGt(*args):
+def tezuGt(*args):
 	arg = evalCodes(args, cfn())
 	b = ""
 	for i in arg:
@@ -57,7 +57,7 @@ def tezGt(*args):
 	b = b[:-1]
 	return eval(b)
 
-def tezLt(*args):
+def tezuLt(*args):
 	arg = evalCodes(args, cfn())
 	b = ""
 	for i in arg:
@@ -66,21 +66,21 @@ def tezLt(*args):
 	b = b[:-1]
 	return eval(b)
 
-def tezRem(*args):
+def tezuRem(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
 		n %= i
 	return n
 
-def tezDiviSub(*args):
+def tezuDiviSub(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
 		n = n//i
 	return n
 
-def tezDiviAdd(*args):
+def tezuDiviAdd(*args):
 	arg = evalCodes(args, cfn())
 	n = arg[0]
 	for i in arg[1:]:
@@ -91,26 +91,24 @@ def tezDiviAdd(*args):
 	return n
 
 
-def tezDo(*args):
+def tezuDo(*args):
 	arg = evalCodes(args, cfn())
 	if type(arg[0])==Codeblock:
 		return arg[0].do()
 
-def tezForever(*args):
+def tezuForever(*args):
 	arg = evalCodes(args, cfn())
 	noBreak = True
 	if len(arg)==1 and type(arg[0])==Codeblock:
-		def tezBreak(*args):
+		def tezuBreak(*args):
 			nonlocal noBreak, arg
 			noBreak = False
-			# print(arg[0].codes)
 			arg[0].codes = []
-			# print(arg[0].codes)
 			stopNow[0] = True
 		while noBreak:
-			arg[0].do(**{"break": tezBreak})
+			arg[0].do(**{"break": tezuBreak})
 
-def tezIf(*args):
+def tezuIf(*args):
 	arg = evalCodes(args, cfn())
 	for i in range(len(arg)):
 		if i==0:
@@ -126,24 +124,23 @@ def tezIf(*args):
 		elif arg[i]=="else":
 			i += 1
 			return arg[i].do()
-		# print(b, repr(var["n"]))
 
 funcs.update({
 	"exit": exit,
 	"quit": quit,
-	"+": tezAdd,
-	"-": tezSub,
-	"*": tezMult,
-	"/": tezDivi,
-	"=": tezEq,
-	">": tezGt,
-	"<": tezLt,
-	"%": tezRem,
-	"/-": tezDiviSub,
-	"/+": tezDiviAdd,
-	"codes": tezCodes,
-	"do": tezDo,
-	"fn": tezFunc,
-	"forever": tezForever,
-	"if": tezIf,
+	"+": tezuAdd,
+	"-": tezuSub,
+	"*": tezuMult,
+	"/": tezuDivi,
+	"=": tezuEq,
+	">": tezuGt,
+	"<": tezuLt,
+	"%": tezuRem,
+	"/-": tezuDiviSub,
+	"/+": tezuDiviAdd,
+	"codes": tezuCodes,
+	"do": tezuDo,
+	"fn": tezuFunc,
+	"forever": tezuForever,
+	"if": tezuIf,
 })

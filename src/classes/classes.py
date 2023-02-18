@@ -40,7 +40,7 @@ class Codeblock:
 		self.fn = deepcopy(funcs)
 		rtnv = 0
 		
-		def tezCodesReturn(*args):
+		def tezuCodesReturn(*args):
 			global thisCodeblock, stopNow
 			nonlocal self, rtnv
 			
@@ -50,7 +50,7 @@ class Codeblock:
 			stopNow[0] = True
 			self.codes = []
 		
-		self.fn["ret"] = tezCodesReturn
+		self.fn["ret"] = tezuCodesReturn
 		# print(self.codes)
 		
 		# print(self.fn)
@@ -61,15 +61,15 @@ class Codeblock:
 		runCodes(self.codes, self.fn)
 		return rtnv
 
-class tezList(list):
+class tezuList(list):
 	...
 
-class tezFunc:
+class tezuFunc:
 	def __init__(self, *args) -> None:
 		cb = Codeblock(args[-1])
 		def f(*arg):
 			a = evalCodes(arg)
-			a = tezList(a)
-			tezarg = lambda *args: (a if len(args)==0 else a[args[0]])
-			return cb.do(**{"arg":tezarg})
+			a = tezuList(a)
+			tezuarg = lambda *args: (a if len(args)==0 else a[args[0]])
+			return cb.do(**{"arg":tezuarg})
 		funcs[args[0]] = f
