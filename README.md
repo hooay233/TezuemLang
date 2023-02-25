@@ -18,9 +18,9 @@ although I didn't do formatted output
 # Comments
 ```
 // This is a line of comments
-//. This is also a line of comments
+/. This is also a line of comments
    This is still a line of comments
-   They are all comments. /.
+   They are all comments. ./
 ```
 Comments in Tezume start with `//`; starts with `/.` and ends with `./` ending  
 (nesting is not supported at this time)
