@@ -36,8 +36,8 @@ def printTezuLogo():
 	print  ("\033[0;31;40m      ##\033[0m", end="")
 	print("\n\033[0;36;40m  ######\033[0m", end="")
 	print  ("\033[0;34;40m  ######\033[0m", end="")
-	print  ("\033[0;31;40m  ######\033[0m", end="")
-	print("\ngithub: ...")
+	print  ("\033[0;31;40m  ######\033[0m")
+	print("\ngithub: https://github.com/hooay233/TezuemLang")
 
 def main():
 	if len(sys.argv)==1:
