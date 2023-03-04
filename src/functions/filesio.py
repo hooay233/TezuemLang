@@ -1,3 +1,5 @@
+import os
+
 from codeRunner import *
 from classes.classes import *
 
@@ -53,8 +55,13 @@ def tezuFile(*args):
 
 def tezuInclude(*args):
 	arg = evalCodes(args, cfn())
-	if arg[0][1]=="<" and arg[0][-1]==">":
-		...
+	if arg[0][0]=="<" and arg[0][-1]==">":
+		with open(os.getenv("APPDATA")+"\\Tezuem\\path") as f:
+			p = f.read()
+		with open(p+f"\\libs\\{arg[0][1:-1]}_init.py") as f:
+			f.readline()
+			c = f.read()
+		exec(c, globals())
 	else:
 		with open(arg[0]) as f:
 			runCodes(getTezuCodeListOfPy(f.read()))
